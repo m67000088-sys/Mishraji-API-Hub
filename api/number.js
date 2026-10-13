@@ -40,12 +40,13 @@ export default async function handler(req, res) {
     const data = await upstream.json();
     cors(res);
     return res.status(200).json({
-      status: data.status || 'success',
-      number: data.number || number,
-      data: data.data || null,
-      developer: 'Mishra.ji',
-      telegram: 'https://t.me/mishra95801Ji'
-    });
+  success: data.success ?? false,
+  number: data.number ?? number,
+  hiteck_info: data.hiteck_info ?? null,
+  icmr_info: data.icmr_info ?? null,
+  developer: 'Mishra.ji',
+  telegram: 'https://t.me/mishra95801Ji'
+});
   } catch {
     return error(res, 502, 'upstream fetch failed');
   }
