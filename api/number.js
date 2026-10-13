@@ -35,7 +35,7 @@ export default async function handler(req, res) {
   if (payload.expired) return error(res, 401, 'key expired');
 
   try {
-    const upstream = await fetch(`https://numberinfo-api-adibhai.vercel.app/api/number?number=${encodeURIComponent(number)}`);
+    const upstream = await fetch(`https://num-info.noobster11001.workers.dev/?key=@noob11001&num=${encodeURIComponent(number)}`);
     if (!upstream.ok) throw new Error(`upstream status ${upstream.status}`);
     const data = await upstream.json();
     cors(res);
